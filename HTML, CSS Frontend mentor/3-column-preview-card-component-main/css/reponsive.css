@@ -1,0 +1,39 @@
+/* PC */
+@media (min-width: 64em) {
+    body{
+        height: 100vh;
+    }
+}
+
+
+/* Tablet and Mobile */
+@media (max-width: 63.9375em) {
+    body{
+        flex-wrap: wrap;
+        font-size: 32px;
+    }
+    .title{
+        font-size: 48px;
+    }
+    .content{
+        line-height: 48px;
+    }
+    .detail{
+        position: relative;
+        bottom: 0;
+        left: 0;
+        font-size: 32px;
+        width: 90vw;
+        margin-top: 32px;
+    }
+    .card{
+        height: fit-content;
+    }
+}
+
+/* Mobile */
+@media (max-width: 46.1875em){
+    .card{
+        padding: 16px;
+    }
+}
