@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    background-color: #DADADA;
+    position: relative;
+}
+.main{
+    width: 1181px;
+    height: 440px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.picture-container{
+    width: 264px;
+    height: 200px;
+    border-radius: 4.5px;
+    overflow: hidden;
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.25s;
+}
+.picture-container:hover .image{
+    transform: scale(120%);
+    cursor: pointer;
+}
+.modal{
+    display: flex;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transform: scale(90%);
+    transition: 0.2s;
+    z-index: -1;
+}
+.modal-animation{
+    z-index: 1;
+    opacity: 1;
+    transform: scale(100%);
+}
+#closedIcon{
+    color: white;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 16px 24px;
+    font-size: 35px;
+    cursor: pointer;
+}
+.icon-gallery{
+    position: absolute;
+    color: #D5D5D5;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 10px;
+    font-size: 75px;
+    cursor: pointer;
+}
+#nextIcon{
+    right: 0;
+}
+#imageModal{
+    height: 655px;
+    width: 1344px;
+    margin: auto;
+    object-fit: cover;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.15.4-web/css/all.css">
+</head>
+<body>
+    <div class="main">
+        <!-- Begin: Gallery -->
+        <div class="picture-container">
+            <img class="image"src="./img/img1.jpeg" alt="" onclick="openModal(this,0)">
+        </div>
+        <div class="picture-container">
+            <img class="image" src="./img/img2.jpeg" alt="" onclick="openModal(this,1)">
+        </div>
+        <div class="picture-container">
+            <img class="image" src="./img/img3.jpeg" alt="" onclick="openModal(this,2)">
+        </div>
+        <div class="picture-container">
+            <img class="image" src="./img/img4.jpeg" alt="" onclick="openModal(this,3)">
+        </div>
+        <div class="picture-container">
+            <img class="image" src="./img/img5.jpeg" alt="" onclick="openModal(this,4)">
+        </div>
+        <div class="picture-container">
+            <img class="image" src="./img/img6.jpeg" alt="" onclick="openModal(this,5)">
+        </div>
+        <div class="picture-container">
+            <img class="image" src="./img/img7.jpeg" alt="" onclick="openModal(this,6)">
+        </div>
+        <div class="picture-container">
+            <img class="image" src="./img/img8.jpeg" alt="" onclick="openModal(this,7)">
+        </div>
+        <!-- End: Gallery -->
+    </div>
+    <!-- Begin: Modal -->
+    <div class="modal">
+        <i id="closedIcon" class="fas fa-times"></i>
+        <i id="previousIcon" class="fas fa-angle-left icon-gallery" onclick="changeImage(-1)"></i>
+        <i id="nextIcon" class="fas fa-angle-right icon-gallery" onclick="changeImage(1)"></i>
+        <img id="imageModal" src="" alt="">
+    </div>
+    <!-- End: Modal -->
+    <script src="./srcipt.js"></script>    
+</body>
+</html>

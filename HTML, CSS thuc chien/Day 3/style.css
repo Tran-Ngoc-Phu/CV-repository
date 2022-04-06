@@ -1,0 +1,98 @@
+:root {
+  --pink-color: #e26e70;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-image: linear-gradient(
+    45deg,
+    rgb(65, 88, 208) 0%,
+    rgb(200, 80, 192) 50%,
+    rgb(255, 204, 112) 100%
+  );
+  font-family: sans-serif;
+}
+.open-modal {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px 40px;
+  border-radius: 6px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.modal {
+  background-color: rgb(0, 0, 0, 0.6);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.modal-inner {
+  position: relative;
+  margin: 200px auto;
+  width: 450px;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  animation-name: slide;
+  animation-duration: 0.25s;
+}
+.modal-header {
+  height: 50px;
+  background-color: var(--pink-color);
+  color: white;
+  padding: 15px;
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-header i {
+  font-weight: 900;
+  cursor: pointer;
+}
+.modal-content {
+  padding: 15px;
+}
+.modal-content h2 {
+  color: var(--pink-color);
+}
+.modal-content p {
+  margin-top: 10px;
+}
+.modal-footer {
+  text-align: right;
+  padding: 15px 15px;
+}
+.modal-footer button {
+  padding: 10px 20px;
+  background-color: var(--pink-color);
+  color: white;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.hide {
+  display: none;
+}
+@keyframes slide {
+  from {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

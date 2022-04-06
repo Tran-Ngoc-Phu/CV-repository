@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root{
+    --text-color: #4daf54
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(to right, #4daf54, #3d8880);
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Poppins';
+}
+.card{
+    height: 400px;
+    width: 320px;
+    background-color: #272D40;
+    border-radius: 15px;
+    margin: 120px auto;
+    padding: 40px 20px;
+    color: white;
+    position: relative;
+}
+.like, .cart{
+    font-size: 25px;
+    top: 12px;
+    left: 20px;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+}
+.cart{
+    left: unset;
+    right: 20px;
+}
+.card-image{
+    width: 90%;
+    transition: 0.5s;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.card:hover .card-image{
+    transform: translateY(-90px) rotate(-20deg);
+}
+.card-title{
+    color: var(--text-color);
+    text-align: center;
+    transition: 0.5s;
+}
+.card-price{
+    font-size: 26px;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.card:hover .card-title{
+    transform: translate(-42px, -72px);
+}
+.card:hover .card-price{
+    transform: translate(-114px, -72px);
+}
+.card-size{
+    margin-top: 100px;
+}
+.card-size, .card-color, .card-action{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+.card-size, .card-color{
+    display: flex;
+    margin-bottom: 15px;
+}
+.card:hover .card-size{
+    margin-top: -30px;
+}
+.card:hover .card-size, 
+.card:hover .card-color,
+.card:hover .card-action{
+    transition-delay: 0.2s;
+    opacity: 1;
+    visibility: visible;
+
+}
+.card-size h3, .card-color h3{
+    font-weight: unset;
+    margin-right: 12px;
+}
+.card-size span{
+    padding: 2px 10px; 
+    background-color: #DADADA;
+    margin: 0 5px;
+    border-radius: 5px;
+    color: #272d40;
+    cursor: pointer;
+}
+.card-color span{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin: 5px 5px;
+    cursor: pointer;
+}
+.card-color span.green{
+    background-color: green;
+}
+.card-color span.red{
+    background-color: red;
+}
+.card-color span.black{
+    background-color: black;
+}
+.card-action button{
+    background-color: var(--text-color);
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    margin-right: 7px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.card-action button:hover{
+    transform: scale(0.9)
+}

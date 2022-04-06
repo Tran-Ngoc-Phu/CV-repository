@@ -1,0 +1,84 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+:root{
+    --pink-color:#f2726a
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height: 100vh;
+    background-image: linear-gradient(45deg, #15974E, #37B366);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 300px;
+    height: 400px;
+    background-color: #242628;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    margin: 0px 30px;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;    
+}
+.card-image{
+    height: 120px;
+    width: 120px;
+    transform: translateY(25px);
+    margin: 0px auto;
+    border-radius: 50%;
+    border: 4px solid var(--pink-color);
+    transition: 0.25s;
+    overflow: hidden;
+}
+.card-image:hover{
+    transition-delay: 0.09s;
+    height: 100%;
+    width: 100%;
+    border-radius: unset;
+    border: unset;
+    transform: unset;
+    cursor: pointer;
+}
+h2{
+    margin-top: 40px;
+    color: white;
+    font-weight: bold;
+}
+.card p{
+    color: var(--pink-color);
+}
+.card-social a{
+    display: inline-block;
+    margin: 25px 20px 40px;
+    color: white;
+    background-color: #242628;
+    font-size: 18px;
+    transition: 0.5s;
+}
+.card-social a:hover{
+    color: var(--pink-color);
+}
+.contact button{
+    padding: 10px 20px;
+    border: 1px solid var(--pink-color);
+    color: white;
+    background-color: transparent;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+.contact button:hover{
+    background-color: var(--pink-color);
+    cursor: pointer;
+}

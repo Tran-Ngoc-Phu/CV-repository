@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.css">
+</head>
+<body>
+    <div id="main">
+        <div class="picture">
+            <img class="image" src="./img/img1.jpeg" alt="" onclick="showImage(this,0)">
+        </div>
+        <div class="picture">
+            <img class="image" src="./img/img2.jpeg" alt="" onclick="showImage(this,1)">
+        </div>
+        <div class="picture">
+            <img class="image" src="./img/img3.jpeg" alt="" onclick="showImage(this,2)">
+        </div>
+        <div class="picture">
+            <img class="image" src="./img/img4.jpeg" alt="" onclick="showImage(this,3)">
+        </div>
+        <div class="picture">
+            <img class="image" src="./img/img5.jpeg" alt="" onclick="showImage(this,4)">
+        </div>
+        <div class="picture">
+            <img class="image" src="./img/img6.jpeg" alt="" onclick="showImage(this,5)">
+        </div>
+        <div class="picture">
+            <img class="image" src="./img/img7.jpeg" alt="" onclick="showImage(this,6)">
+        </div>
+        <div class="picture">
+            <img class="image" src="./img/img8.jpeg" alt="" onclick="showImage(this,7)">
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal">
+        <i id="closedIcon" class="fas fa-times" onclick="closeModal()"></i>
+        <i id="previousArrow" class="fas fa-angle-left" onclick="plusImage(-1)"></i>
+        <i id="nextArrow"  class="fas fa-angle-right" onclick="plusImage(1)"></i>
+        <img id="imageModal"src="./img/img1.jpeg" alt="">
+
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
