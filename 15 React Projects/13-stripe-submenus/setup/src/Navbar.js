@@ -4,18 +4,30 @@ import { FaBars } from "react-icons/fa";
 import { StoreContext } from "./context";
 
 const Navbar = () => {
-  const { setSubLink } = useContext(StoreContext);
+  const { setSubLink, setDirection, setSidebar } = useContext(StoreContext);
+  const handleLinkHover = (linkName, event) => {
+    const linkRect = event.target.getBoundingClientRect();
+    const direction = (linkRect.left + linkRect.right) / 2;
+    setSubLink(linkName);
+    setDirection(direction);
+  };
+  const handleHideSubmenu = (event) => {
+    if (!event.target.classList.contains("link-btn")) setSubLink(null);
+  };
   return (
-    <div className="nav">
+    <div className="nav" onMouseOver={(event) => handleHideSubmenu(event)}>
       <div className="nav-center">
         <div className="nav-header">
           <img src={logo} alt="logo" />
+          <button className="btn toggle-btn" onClick={() => setSidebar(true)}>
+            <FaBars />
+          </button>
         </div>
         <ul className="nav-links">
           <li>
             <button
               className="link-btn"
-              onMouseOver={() => setSubLink("products")}
+              onMouseOver={(event) => handleLinkHover("products", event)}
             >
               products
             </button>
@@ -23,7 +35,7 @@ const Navbar = () => {
           <li>
             <button
               className="link-btn"
-              onMouseOver={() => setSubLink("developers")}
+              onMouseOver={(event) => handleLinkHover("developers", event)}
             >
               developers
             </button>
@@ -31,13 +43,13 @@ const Navbar = () => {
           <li>
             <button
               className="link-btn"
-              onMouseOver={() => setSubLink("company")}
+              onMouseOver={(event) => handleLinkHover("company", event)}
             >
               company
             </button>
           </li>
         </ul>
-        <button className="btn singin-btn">Sign in</button>
+        <button className="btn signin-btn">Sign in</button>
       </div>
     </div>
   );

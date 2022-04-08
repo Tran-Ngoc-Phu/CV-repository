@@ -2,8 +2,15 @@ import React, { useState, useRef, useEffect, useContext } from "react";
 import { StoreContext } from "./context";
 
 const Submenu = () => {
-  const { subLinks } = useContext(StoreContext);
+  const { subLinks, direction } = useContext(StoreContext);
   const page = subLinks?.page;
+  const container = useRef(null);
+
+  useEffect(() => {
+    const submenu = container.current;
+    submenu.style.left = `${direction}px`;
+  }, [subLinks, direction]);
+
   let classNameSubMenu = "";
   switch (page) {
     case "products":
@@ -18,13 +25,12 @@ const Submenu = () => {
     default:
       classNameSubMenu = "";
   }
-  console.log(classNameSubMenu);
   return (
-    <div className={subLinks ? "submenu show" : "submenu"}>
+    <div className={subLinks ? "submenu show" : "submenu"} ref={container}>
       <h4>{page}</h4>
       <div className={classNameSubMenu}>
-        {subLinks?.links.map((link) => (
-          <a href={link.url}>
+        {subLinks?.links.map((link, index) => (
+          <a key={index} href={link.url}>
             {link.icon} {link.label}
           </a>
         ))}
