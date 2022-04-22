@@ -1,13 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import logo from '../logo.svg'
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../logo.svg";
 
 const Navbar = () => {
   return (
-    <div>
-      <h2>navbar component</h2>
+    <div className="navbar">
+      <div className="nav-center">
+        <Link to="/">
+          <img className="logo" src={logo} alt="logo"></img>
+        </Link>
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
