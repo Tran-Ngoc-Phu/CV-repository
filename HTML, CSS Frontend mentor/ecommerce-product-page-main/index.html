@@ -1,112 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="stylesheet" href="style.css">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
-</head>
-<body>
-  <div class="main">
-    <div class="header">
-      <div class="brand">
-        <img src="./images/logo.svg" alt="">
-      </div>
-      <ul class="menu">
-        <li class="menu-part">
-          Collections
-          <div class="hover-bar"></div>
-        </li>
-        <li class="menu-part">
-          Men
-          <div class="hover-bar"></div>
-        </li>
-        <li class="menu-part">
-          Women
-          <div class="hover-bar"></div>
-        </li>
-        <li class="menu-part">
-          About
-          <div class="hover-bar"></div>
-        </li>
-        <li class="menu-part">
-          Contact
-          <div class="hover-bar"></div>
-        </li>
-      </ul>
-      <div class="personal-info">
-        <div class="shopping-cart">
-          <img src="./images/icon-cart.svg" alt="">
-          <div class="cart-list">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <div class="brand">
+          <img src="./images/logo.svg" alt="" />
+        </div>
+        <ul class="menu">
+          <li class="menu-part">
+            Collections
+            <div class="hover-bar"></div>
+          </li>
+          <li class="menu-part">
+            Men
+            <div class="hover-bar"></div>
+          </li>
+          <li class="menu-part">
+            Women
+            <div class="hover-bar"></div>
+          </li>
+          <li class="menu-part">
+            About
+            <div class="hover-bar"></div>
+          </li>
+          <li class="menu-part">
+            Contact
+            <div class="hover-bar"></div>
+          </li>
+        </ul>
+        <div class="personal-info">
+          <div class="icon-cart-section">
+            <img src="./images/icon-cart.svg" alt="" />
+            <p class="product-count">0</p>
+          </div>
+
+          <div class="cart-list hidden">
             <p class="title-cart">Cart</p>
-            <ul class="cart-products">Your cart is empty.</ul>
+            <ul class="cart-products">
+              <li class="cart-empty"><p>Your cart is empty</p></li>
+            </ul>
+          </div>
+          <div class="avatar">
+            <img src="./images/image-avatar.png" alt="" />
           </div>
         </div>
-        <div class="avatar">
-          <img src="./images/image-avatar.png" alt="">
+      </div>
+      <div class="content">
+        <div class="product-images">
+          <div class="image-display">
+            <img src="./images/image-product-1.jpg" alt="" />
+          </div>
+          <ul class="image-gallery">
+            <li class="active-image">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="" />
+            </li>
+            <li>
+              <img src="./images/image-product-2-thumbnail.jpg" alt="" />
+            </li>
+            <li>
+              <img src="./images/image-product-3-thumbnail.jpg" alt="" />
+            </li>
+            <li>
+              <img src="./images/image-product-4-thumbnail.jpg" alt="" />
+            </li>
+          </ul>
+        </div>
+        <div class="product-info-and-payment">
+          <p class="company-name">Sneaker Company</p>
+          <h1 class="product-name">Fall Limited Edition Sneakers</h1>
+          <p class="product-info">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+          <div class="current-price">
+            <h2 class="product-price">$125.00</h2>
+            <div class="discount-alert">50%</div>
+          </div>
+          <div class="old-price">$250.00</div>
+          <div class="payment-info">
+            <div class="change-number-product">
+              <button class="decrease">
+                <img src="./images/icon-minus.svg" alt="" />
+              </button>
+              <p class="number-product">0</p>
+              <button class="increase">
+                <img src="./images/icon-plus.svg" alt="" />
+              </button>
+            </div>
+            <button class="btn add-product">
+              <img src="./images/icon-cart.svg" alt="" />
+              Add to cart
+            </button>
+          </div>
         </div>
       </div>
-      
-
     </div>
-    <div class="content">
-      <div class="product-images">
-        <div class="image-display">
-          <img src="./images/image-product-1.jpg" alt="">
+    <div class="popup hidden">
+      <div class="display-section">
+        <img class="close-button" src="./images/icon-close.svg" />
+        <div class="display-image">
+          <img class="product" src="./images/image-product-1.jpg" alt="" />
+          <button class="previous">
+            <img src="./images/icon-previous.svg" />
+          </button>
+          <button class="next">
+            <img src="./images/icon-next.svg" />
+          </button>
         </div>
-        <ul class="image-gallery">
+        <ul class="image-gallery-popup">
           <li class="active-image">
-            <img src="./images/image-product-1-thumbnail.jpg" alt="">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="" />
           </li>
           <li>
-            <img src="./images/image-product-2-thumbnail.jpg" alt="">
+            <img src="./images/image-product-2-thumbnail.jpg" alt="" />
           </li>
           <li>
-            <img src="./images/image-product-3-thumbnail.jpg" alt="">
+            <img src="./images/image-product-3-thumbnail.jpg" alt="" />
           </li>
           <li>
-            <img src="./images/image-product-4-thumbnail.jpg" alt="">
+            <img src="./images/image-product-4-thumbnail.jpg" alt="" />
           </li>
         </ul>
       </div>
-      <div class="product-info-and-payment">
-        <p class="company-name">Sneaker Company</p>
-        <h1 class="product-name">Fall Limited Edition Sneakers</h1>
-        <p class="product-info">These low-profile sneakers are your perfect casual wear companion. Featuring a 
-          durable rubber outer sole, they’ll withstand everything the weather can offer.
-        </p>
-        <div class="current-price">
-          <h2 class="product-price">$125.00</h2>
-          <div class="discount-alert">50%</div>
-        </div>        
-        <div class="old-price">$250.00</div>
-        <div class="payment-info">
-          <div class="change-number-product">
-            <button class="decrease">
-              <img src="./images/icon-minus.svg" alt="">
-            </button>
-            <p class="number-product">0</p>
-            <button class="increase">
-              <img src="./images/icon-plus.svg" alt="">
-            </button>
-          </div>
-          <button class="add-product">
-            <img src="./images/icon-cart.svg" alt="">
-            Add to cart
-          </button>
-        </div>
-       
-      </div>
     </div>
-  </div>
-  
-  
-  
-  
-  
+    <script src="./script.js"></script>
 
-  <!-- Sneaker Company
+    <!-- Sneaker Company
 
   Fall Limited Edition Sneakers
 
@@ -124,5 +151,5 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
-</body>
+  </body>
 </html>

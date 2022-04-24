@@ -9,6 +9,9 @@ body{
     height: 100vh;
     padding: 0 240px;
 }
+.main{
+    position: relative;
+}
 .header{
     height: 10vh;
     display: flex;
@@ -48,17 +51,17 @@ body{
 }
 .shopping-cart{
     width: 12%;
-    font-weight: 600;
     position: relative;
 }
 .avatar{
     width: 26%;
     margin-left: 40px;
 }
-.shopping-cart img, .avatar img{
+.shopping-cart>img, .avatar>img{
     width: 100%;
     height: 100%;
     cursor: pointer;
+    position: relative;
 }
 .cart-list{
     position: absolute;
@@ -72,8 +75,61 @@ body{
 .hide{
     display: none;
 }
-.cart-list li{
+.cart-products{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px 20px;
+}
+.cart-products li{
+    width: 100%;
+    height: 8vh;
     list-style-type: none;
+    padding: 12px 0;
+}
+.cart-empty{
+    height: 12vh !important;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 60px;
+}
+.cart-product{
+    display: flex;
+    justify-content: space-between;
+}
+.icon-cart-section{
+    position: relative;
+    cursor: pointer;
+}
+.product-count{
+    position: absolute;
+    background-color: hsl(26, 100%, 55%);
+    color: white;
+    top: -5px;
+    right: -5px;
+    height: 12px;
+    width: 17px;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 6px;
+}
+.product-thumbnail{
+    height: auto;
+    width: auto;
+    border-radius: 5px;
+}
+.product-detail{
+    display: flex;
+    flex-direction: column;
+}
+.product-detail p{
+    height: 100%;
+}
+.product-delete {
+    height: 35%;
+    width: auto;
+    margin: auto 0px;
 }
 .title-cart{
     height: 10vh;
@@ -81,15 +137,6 @@ body{
     line-height: 10vh;
     padding-left: 20px;
     font-weight: 600;
-}
-.cart-products{
-    height: 24vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    opacity: 0.5;
-    background-color: white;
 }
 .content{
     display: flex;
@@ -109,27 +156,28 @@ body{
     height: 100%;
     object-fit: cover;
 }
-.image-gallery{
+.image-gallery,.image-gallery-popup{
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
 }
-.image-gallery li{
+.image-gallery li, .image-gallery-popup li{
     list-style-type: none;
     width: 20%;
     border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
+    background-color: white;
 }
 .active-image{
     border: 4px solid hsl(26, 100%, 55%);
 }
-.image-gallery li img{
+.image-gallery li img,.image-gallery-popup li img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.image-gallery li img:hover{
+.image-gallery li img:hover, .image-gallery-popup li img:hover{
     opacity: 0.3;
 }
 .product-info-and-payment{
@@ -188,6 +236,9 @@ body{
     background-color:  hsl(223, 64%, 98%);
     cursor: pointer;
 }
+.decrease:hover img, .increase:hover img{
+    opacity: 50%;
+}
 .number-product{
     background-color:  hsl(223, 64%, 98%);
     line-height: 7vh;
@@ -195,9 +246,9 @@ body{
     font-weight: 600;
     flex: 2;
 }
-.add-product{
-    margin-left: 16px;
-    flex: 3;
+.btn {
+    width: 100%;
+    height: 100%;
     border: none;
     outline: none;
     background-color: hsl(26, 100%, 55%);
@@ -207,10 +258,87 @@ body{
     border-radius: 8px;
     cursor: pointer;
 }
+.add-product{
+    flex: 3;
+    margin-left: 16px;
+    box-shadow: 0px 30px 10px hsl(25, 100%, 94%);
+}
+.add-product:hover{
+    opacity: 50%;
+}
 .add-product img{
     color: white;
     filter: brightness(500%);
     width: 16px;
     margin-right: 16px;
 }
+
+.popup{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hsl(0, 0%, 0%, 70%);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.display-section{
+    width: 30vw;
+    height: auto;
+    position: relative;
+}
+
+.display-section .close-button{
+    width: auto;
+    height: 3vh;
+    text-align: right;
+    filter: invert(100%);
+    position: absolute;
+    top: -40px;
+    right: 0;
+    cursor: pointer;
+}
+.display-image{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.display-image .product{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.display-image button{
+    width: 3vw;
+    height: 3vw;
+    position: absolute;
+    background-color: hsl(0, 0%, 100%);
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.display-image .next{
+    right: -24px;
+}
+.display-image .next img{
+    top: 2px;
+    position: relative;
+    left: 2px;
+}
+.display-image .previous{
+    left: -24px;
+}
+.display-image .previous img{
+    top: 2px;
+    position: relative;
+    right: 2px;
+}
+.hidden{
+    display: none;
+}
+
 
