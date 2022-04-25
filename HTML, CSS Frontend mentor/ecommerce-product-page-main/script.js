@@ -5,6 +5,7 @@ var imageGalleryPopup = document.querySelectorAll(".image-gallery-popup li");
 var popup = document.querySelector(".popup");
 var closeBtn = document.querySelector(".close-button");
 var displayImage = document.querySelector(".product");
+var imageDisplayMainSite = document.querySelector(".image-display img");
 
 var matchList = [
   "./images/image-product-1",
@@ -31,6 +32,7 @@ function setImage(item, gallery, relatedGallery) {
   var newDisplayPicture = pictureList.find((item) =>
     item.includes(`${matchSrc}`)
   );
+  imageDisplayMainSite.setAttribute("src", newDisplayPicture);
   displayImage.setAttribute("src", newDisplayPicture);
 
   relatedGallery.forEach((image) => {
@@ -65,6 +67,7 @@ var cartProducts = document.querySelector(".cart-products");
 
 function changeAmount(value) {
   var changedAmount = parseInt(currentProductAmount.textContent) + value;
+  if (changedAmount < 0) changedAmount = 0;
   currentProductAmount.textContent = changedAmount;
   productCount.textContent = currentProductAmount.textContent;
   // Check the cart is empty of not
@@ -87,6 +90,11 @@ var nextBtn = document.querySelector(".next");
 var previous = document.querySelector(".previous");
 
 function changeSlide(value) {
+  imageGallery.forEach((element) => element.classList.remove("active-image"));
+
+  imageGalleryPopup.forEach((element) =>
+    element.classList.remove("active-image")
+  );
   currentIndex = pictureList.findIndex(
     (item) => item == displayImage.getAttribute("src")
   );
@@ -94,7 +102,30 @@ function changeSlide(value) {
   if (newIndex < 0) newIndex = 0;
   else if (newIndex > pictureList.length - 1) newIndex = pictureList.length - 1;
   displayImage.setAttribute("src", pictureList[newIndex]);
+  imageDisplayMainSite.setAttribute("src", pictureList[newIndex]);
+  imageGalleryPopup[newIndex].classList.add("active-image");
+  imageGallery[newIndex].classList.add("active-image");
 }
 
 nextBtn.onclick = () => changeSlide(1);
 previous.onclick = () => changeSlide(-1);
+
+// Open the menu popup
+var menuCompact = document.querySelector(".menu-compact");
+var menuPopup = document.querySelector(".popup-menu");
+var menuSection = document.querySelector(".popup-menu-section");
+var closeMenuPopup = document.querySelector(".popup-menu img");
+
+function toggleMenu() {
+  menuSection.classList.toggle("hidden");
+  var style = getComputedStyle(menuPopup);
+  if (style.left == "0px") {
+    menuPopup.style.left = "-100vw";
+  } else {
+    menuPopup.style.left = "0";
+  }
+}
+function hideMenu() {}
+
+closeMenuPopup.onclick = () => toggleMenu();
+menuCompact.onclick = () => toggleMenu();
