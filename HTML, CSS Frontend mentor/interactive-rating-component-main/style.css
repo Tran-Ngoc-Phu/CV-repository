@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: black;
+}
+.display-section{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rating-container,.thkyou-container{
+    height: 360px;
+    width: 360px;
+    background-color: hsl(216, 12%, 8%);
+    border-radius: 15px;
+    padding: 30px;
+}
+@media screen and (max-width: 375px) {
+    .rating-container,.thkyou-container{
+        width: 90vw;
+    }
+}
+.star-container{
+    height: 40px;
+    width: 40px;
+    background-color: hsl(213, 19%, 18%);
+    border-radius: 50%;
+    padding: 12px;
+}
+.star-container img{
+    height: 100%;
+    width: 100%;
+}
+.description{
+    padding-top: 30px;
+}
+h2{
+    color: hsl(0, 0%, 100%);
+}
+p{
+    padding-top: 10px;
+    color: hsl(217, 12%, 63%);
+    font-size: 15px;
+}
+.rating-part{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+}
+.rating-part li{
+    height: 40px;
+    width: 40px;
+    background-color: hsl(213, 19%, 18%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(217, 12%, 63%);
+    cursor: pointer;
+}
+.rating-part li:hover{
+    background-color: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 100%);
+}
+.rating-clicked{
+    background-color: hsl(217, 12%, 63%) !important;
+    color: hsl(0, 0%, 100%) !important;
+}
+button{
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 20px;
+    background-color: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 100%);
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+button:hover{
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(25, 97%, 53%);
+}
+.thkyou-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img-container{
+    height: 100px;
+    width: auto;
+}
+.img-container img{
+    height: 100%;
+    width: 100%;
+}
+h5{
+    padding: 8px 20px 5px;
+    background-color: hsl(213, 19%, 18%);
+    border-radius: 30px;
+    color: hsl(25, 97%, 53%);
+    margin-top: 30px;
+    font-weight: 400;
+}
+.mar-top-30px{
+    margin-top: 30px;
+}
+.txt-align-center{
+    text-align: center;
+}
